@@ -1,0 +1,49 @@
+[
+    {
+        "product_id":1001,
+        "product_name":"Hogwards legacy",
+        "platform":"ps",
+        "price":1560,
+        "images":
+        {
+            "url1":"https://i.ebayimg.com/images/g/W58AAOSw3VRkCCZg/s-l1600.jpg",
+            "url2":"https://i.ebayimg.com/images/g/kAgAAOSwT2FkCCZk/s-l1600.jpg"
+        }
+    },
+    {
+        "product_id":1002,
+        "product_name":"GTA V",
+        "platform":"xbox",
+        "price":1100,
+        "images":
+        {
+            "url1":"https://i.ebayimg.com/images/g/x8kAAOSwHrxkDTNr/s-l1600.jpg",
+            "url2":"https://i.ebayimg.com/images/g/SlAAAOSwVi5kDTNu/s-l1600.jpg"
+        }
+    },
+    {
+        "product_id":1003,
+        "product_name":"god of war ragnarok",
+        "platform":"ps",
+        "price":1400,
+        "images":
+        {
+            "url1":"https://i.ebayimg.com/images/g/wXcAAOSwSvBj4-Dz/s-l1600.jpg",
+            "url2":"https://i.ebayimg.com/images/g/n0YAAOSwGoJj4-D6/s-l1600.jpg",
+            "url3":"https://i.ebayimg.com/images/g/FAoAAOSwntFj4-DU/s-l1600.jpg",
+            "url4":"https://i.ebayimg.com/images/g/uRAAAOSwhnxj4-EB/s-l1600.jpg"
+        }
+    },
+    {
+        "product_id":1004,
+        "product_name":"Red Dead Redemption 2",
+        "platform":"pc",
+        "price":1345,
+        "images":
+        {
+            "url1":"https://i.ebayimg.com/images/g/094AAOSwQatj8Naz/s-l1600.jpg",
+            "url2":"https://i.ebayimg.com/images/g/PIYAAOSw~o5jgrJm/s-l1600.png",
+            "url3":"https://i.ebayimg.com/images/g/rQYAAOSwrkNi2LqJ/s-l1600.jpg"
+        }
+    }
+]

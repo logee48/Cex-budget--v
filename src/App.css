@@ -1,0 +1,96 @@
+body
+{
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+.header
+{
+  margin: 10px;
+  display: flex;
+  gap: 20px;
+}
+#logo_h, #account_h, #cart_h, #sell_h
+{
+  width: 50px;
+  align-self: center;
+}
+#account_h, #cart_h
+{
+  display:flex;
+  align-items: flex-end;
+}
+.header_title
+{
+  align-self: center;
+  font-size: 25px;
+}
+input
+{
+  width: 80vw;
+  height: 30px;
+  border-radius: 30px;
+  padding: 10px;
+  align-self: center;
+  font-size: 25px;
+}
+#account_h
+{
+  align-items: end;
+}
+/* .filter
+{
+  width: 20%;
+  height: 1000000px;
+  background-color: red;
+} */
+
+
+/* product deign */
+.product_border
+{
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 20px;
+  width: 300px;
+}
+#game_pic
+{
+  width: 100px;
+  /* height: a; */
+  position: relative;
+  left: 25%;
+}
+#image_center_div
+{
+  background-color: green;
+}
+#platform_pic
+{
+  width: 50px;
+  position: relative;
+  bottom: 80px;
+  left: 80%;
+}
+#game_title
+{
+  position: relative;
+  top: -20px;
+  font-size: 40px;
+  left: 20%;
+}
+#game_price
+{
+  position: relative;
+  top: -20px;
+  font-size: 30px;
+  left: 25%;
+}
+.product
+{
+  padding: 20px;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  column-gap: 20px;
+  row-gap: 20px;
+}
