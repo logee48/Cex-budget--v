@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import './App.css';
 import logo from './images/logo.png';
 import account from './images/account_logo.png';
@@ -23,14 +24,34 @@ import xbox_logo from './images/xbox_logo.png';
 // }
 
 
+  
+
 function App() {
+
+
+  const [filter, setfilter] = useState('');
+  const searchText = (event)=>{
+    setfilter(event.target.value);
+  }
+
+  // searching function
+  let dataSearch = product_data.filter(item =>{
+    return Object.keys(item).some(key=>
+      item[key].toString().toLowerCase().includes(filter.toString().toLowerCase())
+      )
+  });
+
+
+
+
+  console.warn(filter)
   return (
     <>
       {/* header line section */}
       <div class='header'>
         <img id="logo_h" src={logo} alt="logo"></img>
         <div class="header_title">Cex 2.0</div>
-        <input type={Text}></input>
+        <input type={Text} value={filter} onChange={searchText.bind(this)}></input>
         <img id="sell_h" src={sell} alt="sell"></img>
         <img id="account_h" src={account} alt="account"></img>
         <img id="cart_h" src={cart} alt="cart"></img>
@@ -39,7 +60,7 @@ function App() {
       <div>
         <div class='product'>
             {/* product display section */}
-            {product_data.map((prod)=>(
+            {dataSearch.map((prod)=>(
               <div class="product_border">
               <img id="game_pic" src={prod.images.url1} alt="game_pic"></img>
               <div id="game_title">{prod.product_name}</div>
