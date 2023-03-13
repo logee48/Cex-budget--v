@@ -8,6 +8,8 @@ import product_data from './sample.json';
 import windows from './images/windows.png';
 import ps_logo from './images/ps_logo.png';
 import xbox_logo from './images/xbox_logo.png';
+import AwesomeSlider from 'react-awesome-slider';
+import 'react-awesome-slider/dist/styles.css';
 
 //function for find platforms, i used conditional rendering instead
 
@@ -62,11 +64,16 @@ function App() {
             {/* product display section */}
             {dataSearch.map((prod)=>(
               <div class="product_border">
-              <img id="game_pic" src={prod.images.url1} alt="game_pic"></img>
+              {/* <AwesomeSlider> */}
+                <img id="game_pic" src={prod.images.url1} alt="game_pic"></img>
+                {/* <img id="game_pic" src={prod.images.url2} alt="game_pic"></img>
+                <img id="game_pic" src={prod.images.url3} alt="game_pic"></img>
+                <img id="game_pic" src={prod.images.url4} alt="game_pic"></img>
+              </AwesomeSlider> */}
               <div id="game_title">{prod.product_name}</div>
               <div id="game_price">price:{prod.price}</div>
               {/* <img id="platform_pic" src={for_platform(prod.platform)} alt="platform_pic"></img> */}
-              <img id="platform_pic" src={prod.platform === "pc" ? windows:prod.platform === "ps"?ps_logo:xbox_logo} alt="platform_pic"></img>
+              <img id="platform_pic" src={prod.platform === "pc" ? windows:prod.platform === "playstation"?ps_logo:xbox_logo} alt="platform_pic"></img>
             </div>
             ))}
 
