@@ -8,8 +8,8 @@ import product_data from './sample.json';
 import windows from './images/windows.png';
 import ps_logo from './images/ps_logo.png';
 import xbox_logo from './images/xbox_logo.png';
-import AwesomeSlider from 'react-awesome-slider';
-import 'react-awesome-slider/dist/styles.css';
+// import AwesomeSlider from 'react-awesome-slider';
+// import 'react-awesome-slider/dist/styles.css';
 
 //function for find platforms, i used conditional rendering instead
 
