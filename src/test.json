@@ -1,0 +1,35 @@
+[
+    {
+        "sample":
+        {
+            "product1":
+            {
+                "product_id":1001,
+                "product_name":"Hogwards legacy",
+                "platform":"playstation",
+                "price":1560,
+                "images":
+                {
+                    "url1":"https://i.ebayimg.com/images/g/W58AAOSw3VRkCCZg/s-l1600.jpg",
+                    "url2":"https://i.ebayimg.com/images/g/kAgAAOSwT2FkCCZk/s-l1600.jpg",
+                    "url3":"https://i.ebayimg.com/images/g/W58AAOSw3VRkCCZg/s-l1600.jpg",
+                    "url4":"https://i.ebayimg.com/images/g/kAgAAOSwT2FkCCZk/s-l1600.jpg"
+                }
+            },
+            "product1":
+            {
+                "product_id":1001,
+                "product_name":"Hogwards legacy",
+                "platform":"playstation",
+                "price":1560,
+                "images":
+                {
+                    "url1":"https://i.ebayimg.com/images/g/W58AAOSw3VRkCCZg/s-l1600.jpg",
+                    "url2":"https://i.ebayimg.com/images/g/kAgAAOSwT2FkCCZk/s-l1600.jpg",
+                    "url3":"https://i.ebayimg.com/images/g/W58AAOSw3VRkCCZg/s-l1600.jpg",
+                    "url4":"https://i.ebayimg.com/images/g/kAgAAOSwT2FkCCZk/s-l1600.jpg"
+                }
+            }
+        }
+    }
+]

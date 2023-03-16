@@ -1,4 +1,7 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { db } from './config';
+import { set,ref,onValue } from 'firebase/database';
+import { uid } from 'uid';
 import './App.css';
 import logo from './images/logo.png';
 import account from './images/account_logo.png';
@@ -8,8 +11,22 @@ import product_data from './sample.json';
 import windows from './images/windows.png';
 import ps_logo from './images/ps_logo.png';
 import xbox_logo from './images/xbox_logo.png';
+console.log(product_data);
 // import AwesomeSlider from 'react-awesome-slider';
 // import 'react-awesome-slider/dist/styles.css';
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //function for find platforms, i used conditional rendering instead
 
@@ -32,6 +49,7 @@ function App() {
 
 
   const [filter, setfilter] = useState('');
+  // const [todos, setTodos] = useState([]);
   const searchText = (event)=>{
     setfilter(event.target.value);
   }
@@ -43,10 +61,45 @@ function App() {
       )
   });
 
+  // writing works
+  // const write_data = () =>{
+  //   const uuid = uid();
+  //   set(ref(db, 'users/'+uuid),{
+  //     name: filter
+  //   })
+  //   setfilter("");
+  // }
+
+
+  //does not work
+
+  // useEffect(() => {
+  //   onValue(ref(db, "/users/"), (snapshot) => {
+  //     setTodos([]);
+  //     const data = snapshot.val();
+  //       Object.values(data).map((filter) => {
+  //         setTodos((oldArray) => [...oldArray, filter]);
+  //       });
+  //     }
+  //   );
+  // }, []);
 
 
 
-  console.warn(filter)
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // console.warn(filter)
   return (
     <>
       {/* header line section */}
@@ -54,6 +107,7 @@ function App() {
         <img id="logo_h" src={logo} alt="logo"></img>
         <div class="header_title">Cex 2.0</div>
         <input type={Text} value={filter} onChange={searchText.bind(this)}></input>
+        {/* <button onClick={write_data}>sample</button> */}
         <img id="sell_h" src={sell} alt="sell"></img>
         <img id="account_h" src={account} alt="account"></img>
         <img id="cart_h" src={cart} alt="cart"></img>
@@ -76,6 +130,7 @@ function App() {
               <img id="platform_pic" src={prod.platform === "pc" ? windows:prod.platform === "playstation"?ps_logo:xbox_logo} alt="platform_pic"></img>
             </div>
             ))}
+            
 
 
             {/* <div class="product_border">
