@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { db } from './config';
 import { set,ref,onValue } from 'firebase/database';
-import { uid } from 'uid';
+// import { uid } from 'uid';
 import './App.css';
 import logo from './images/logo.png';
 import account from './images/account_logo.png';
