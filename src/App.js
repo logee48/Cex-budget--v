@@ -11,7 +11,6 @@ import product_data from './sample.json';
 import windows from './images/windows.png';
 import ps_logo from './images/ps_logo.png';
 import xbox_logo from './images/xbox_logo.png';
-console.log(product_data);
 // import AwesomeSlider from 'react-awesome-slider';
 // import 'react-awesome-slider/dist/styles.css';
 
@@ -48,14 +47,23 @@ console.log(product_data);
 function App() {
 
 
+
+
   const [filter, setfilter] = useState('');
-  // const [todos, setTodos] = useState([]);
+  const [testdata, settestdata] = useState([]);
+  const [a, seta] = useState([{'name':'joe'},{'name':'dsgs'},{'name':'sdgsgsj'}]);
   const searchText = (event)=>{
     setfilter(event.target.value);
   }
 
   // searching function
   let dataSearch = product_data.filter(item =>{
+    return Object.keys(item).some(key=>
+      item[key].toString().toLowerCase().includes(filter.toString().toLowerCase())
+      )
+  });
+
+  let dataSearch1 = testdata.filter(item =>{
     return Object.keys(item).some(key=>
       item[key].toString().toLowerCase().includes(filter.toString().toLowerCase())
       )
@@ -71,22 +79,47 @@ function App() {
   // }
 
 
-  //does not work
+  //does work, can't renter values
 
   // useEffect(() => {
-  //   onValue(ref(db, "/users/"), (snapshot) => {
-  //     setTodos([]);
-  //     const data = snapshot.val();
-  //       Object.values(data).map((filter) => {
-  //         setTodos((oldArray) => [...oldArray, filter]);
-  //       });
-  //     }
-  //   );
+  //   const dbref = ref(db);
+  //   onValue(dbref, (snapshot)=>{
+  //     let records = [];
+  //     snapshot.forEach(childSnapshot=>{
+  //       // let keyName = childSnapshot.key;
+  //       let data = childSnapshot.val();
+  //       records.push({"data":data});
+  //     })
+  //     settestdata(records);
+  //   })
   // }, []);
 
 
 
 
+  //works, but can't render
+  // it works now, problem in return part
+  useEffect(()=>{
+    onValue(ref(db),(snapshot)=>{
+      const data = snapshot.val();
+      if(data!=null){
+      settestdata(data)}
+    })
+  },[]);
+
+
+  // useEffect(()=>{
+  //   onValue(ref(db),(snapshot)=>{
+  //     if(snapshot.val() !== null){
+  //       settestdata({...snapshot.val()});
+  //     }else{
+  //       settestdata({});
+  //     }
+  //   });
+  //   return()=>{
+  //     settestdata({});
+  //   };
+  // },[]);
 
 
 
@@ -99,14 +132,24 @@ function App() {
 
 
 
-  // console.warn(filter)
+
+
+
+
+
+
+
+
+
+
+  console.log(testdata)
   return (
     <>
       {/* header line section */}
       <div class='header'>
         <img id="logo_h" src={logo} alt="logo"></img>
         <div class="header_title">Cex 2.0</div>
-        <input type={Text} value={filter} onChange={searchText.bind(this)}></input>
+        <input value={filter} onChange={searchText.bind(this)}></input>
         {/* <button onClick={write_data}>sample</button> */}
         <img id="sell_h" src={sell} alt="sell"></img>
         <img id="account_h" src={account} alt="account"></img>
@@ -117,7 +160,7 @@ function App() {
         <div class='product'>
             {/* product display section */}
             {dataSearch.map((prod)=>(
-              <div class="product_border">
+              <div className="product_border">
               {/* <AwesomeSlider> */}
                 <img id="game_pic" src={prod.images.url1} alt="game_pic"></img>
                 {/* <img id="game_pic" src={prod.images.url2} alt="game_pic"></img>
@@ -131,6 +174,7 @@ function App() {
             </div>
             ))}
             
+            
 
 
             {/* <div class="product_border">
@@ -142,7 +186,41 @@ function App() {
 
         </div>
         {/* filter section */}
-        <div class='filter'></div>
+        <div>PRoducs</div>
+
+
+
+        {Object.keys(dataSearch1).map((id,index)=>{
+          return (
+            // <>
+            //   <div>{testdata[id].platform}</div>
+            //   <img src={testdata[id].images.url1}></img>
+
+
+            // </>
+            <div className="product_border">
+            {/* <AwesomeSlider> */}
+              <img id="game_pic" src={dataSearch1[id].images.url1} alt="game_pic"></img>
+              {/* <img id="game_pic" src={prod.images.url2} alt="game_pic"></img>
+              <img id="game_pic" src={prod.images.url3} alt="game_pic"></img>
+              <img id="game_pic" src={prod.images.url4} alt="game_pic"></img>
+            </AwesomeSlider> */}
+            <div id="game_title">{dataSearch1[id].product_name}</div>
+            <div id="game_price">price:{dataSearch1[id].price}</div>
+            {/* <img id="platform_pic" src={for_platform(prod.platform)} alt="platform_pic"></img> */}
+            <img id="platform_pic" src={dataSearch1[id].platform === "pc" ? windows:dataSearch1[id].platform === "playstation"?ps_logo:xbox_logo} alt="platform_pic"></img>
+          </div>
+          )
+        })}
+
+
+        {/* <div class='filter'>{testdata[0]}</div> */}
+        {/* <div>{product_data}</div> */}
+        {/* {testdata.map((prod)=>(
+              <div>
+                <div>{prod}</div>
+            </div>
+            ))} */}
         
 
       </div>
