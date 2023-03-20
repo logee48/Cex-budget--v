@@ -11,6 +11,15 @@ import product_data from './sample.json';
 import windows from './images/windows.png';
 import ps_logo from './images/ps_logo.png';
 import xbox_logo from './images/xbox_logo.png';
+import Navbar from './Navbar';
+import { Link, Route, Routes } from 'react-router-dom';
+import { useLocation } from "react-router-dom";
+
+
+import Home from './Home';
+import Cart from './Cart';
+import Profile from './Profile';
+
 // import AwesomeSlider from 'react-awesome-slider';
 // import 'react-awesome-slider/dist/styles.css';
 
@@ -44,11 +53,10 @@ import xbox_logo from './images/xbox_logo.png';
 
   
 
-function App() {
+function App({data}) {
 
 
-
-
+  console.log(data);
   const [filter, setfilter] = useState('');
   const [testdata, settestdata] = useState([]);
   const [a, seta] = useState([{'name':'joe'},{'name':'dsgs'},{'name':'sdgsgsj'}]);
@@ -100,7 +108,7 @@ function App() {
   //works, but can't render
   // it works now, problem in return part
   useEffect(()=>{
-    onValue(ref(db),(snapshot)=>{
+    onValue(ref(db,'/products'),(snapshot)=>{
       const data = snapshot.val();
       if(data!=null){
       settestdata(data)}
@@ -142,18 +150,20 @@ function App() {
 
 
 
-  console.log(testdata)
+  // console.log(testdata)
+  const sample = useLocation().state;
+  console.log(sample);
   return (
     <>
+      <div>{sample}</div>
       {/* header line section */}
-      <div class='header'>
-        <img id="logo_h" src={logo} alt="logo"></img>
-        <div class="header_title">Cex 2.0</div>
-        <input value={filter} onChange={searchText.bind(this)}></input>
+      <div className='header'>
+        <Navbar/>
         {/* <button onClick={write_data}>sample</button> */}
-        <img id="sell_h" src={sell} alt="sell"></img>
-        <img id="account_h" src={account} alt="account"></img>
-        <img id="cart_h" src={cart} alt="cart"></img>
+      </div>
+      <div id="search_bar">
+      <input value={filter} placeholder="seach...." onChange={searchText.bind(this)}></input>
+      <Link to="/cart"><img id="search_logo"src={logo}></img></Link>
       </div>
       
       <div>
