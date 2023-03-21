@@ -11,14 +11,11 @@ import product_data from './sample.json';
 import windows from './images/windows.png';
 import ps_logo from './images/ps_logo.png';
 import xbox_logo from './images/xbox_logo.png';
-import Navbar from './Navbar';
+import Navbar from './Sell';
 import { Link, Route, Routes } from 'react-router-dom';
 import { useLocation } from "react-router-dom";
 
 
-import Home from './Home';
-import Cart from './Cart';
-import Profile from './Profile';
 
 // import AwesomeSlider from 'react-awesome-slider';
 // import 'react-awesome-slider/dist/styles.css';
@@ -158,12 +155,16 @@ function App({data}) {
       <div>{sample}</div>
       {/* header line section */}
       <div className='header'>
-        <Navbar/>
+      <div class='header'>
+                <img id="logo_h" src={logo} alt="logo"></img>
+                {/* <div class="header_title">Cex 2.0</div> */}
+                <Link to="/sell"><img id="sell_h" src={sell} alt="sell"></img></Link>
+            </div>
         {/* <button onClick={write_data}>sample</button> */}
       </div>
       <div id="search_bar">
       <input value={filter} placeholder="seach...." onChange={searchText.bind(this)}></input>
-      <Link to="/cart"><img id="search_logo"src={logo}></img></Link>
+      <img id="search_logo"src={logo}></img>
       </div>
       
       <div>
@@ -181,6 +182,7 @@ function App({data}) {
               <div id="game_price">price:{prod.price}</div>
               {/* <img id="platform_pic" src={for_platform(prod.platform)} alt="platform_pic"></img> */}
               <img id="platform_pic" src={prod.platform === "pc" ? windows:prod.platform === "playstation"?ps_logo:xbox_logo} alt="platform_pic"></img>
+              <Link to="/buy" state={{"id":prod.product_id}}><button>buy</button></Link>
             </div>
             ))}
             
@@ -197,6 +199,7 @@ function App({data}) {
         </div>
         {/* filter section */}
         <div>PRoducs</div>
+        {/* <Link to="/profile" state={{"id":product_data}}><button>submit</button></Link> */}
 
 
 
@@ -234,6 +237,7 @@ function App({data}) {
         
 
       </div>
+      
   
     </>
   );
