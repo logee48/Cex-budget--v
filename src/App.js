@@ -160,7 +160,6 @@ function App({data}) {
                 {/* <div class="header_title">Cex 2.0</div> */}
                 <Link to="/sell"><img id="sell_h" src={sell} alt="sell"></img></Link>
             </div>
-        {/* <button onClick={write_data}>sample</button> */}
       </div>
       <div id="search_bar">
       <input value={filter} placeholder="seach...." onChange={searchText.bind(this)}></input>
