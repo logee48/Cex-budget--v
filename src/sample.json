@@ -1,55 +1,84 @@
 [
     {
-        "product_id":1001,
+        "product_id":0,
         "product_name":"Hogwards legacy",
         "platform":"playstation",
         "price":1560,
-        "images":
-        {
-            "url1":"https://i.ebayimg.com/images/g/W58AAOSw3VRkCCZg/s-l1600.jpg",
-            "url2":"https://i.ebayimg.com/images/g/kAgAAOSwT2FkCCZk/s-l1600.jpg",
-            "url3":"https://i.ebayimg.com/images/g/W58AAOSw3VRkCCZg/s-l1600.jpg",
-            "url4":"https://i.ebayimg.com/images/g/kAgAAOSwT2FkCCZk/s-l1600.jpg"
-        }
+        "images":"https://i.ebayimg.com/images/g/W58AAOSw3VRkCCZg/s-l1600.jpg",
+        "status":"not sold",
+        "type":"game"
     },
     {
-        "product_id":1002,
+        "product_id":1,
+        "product_name":"The Sound of Waves",
+        "platform":"Yukio Mishima",
+        "price":320,
+        "images":"https://m.media-amazon.com/images/I/51JoSGbJvdL.jpg",
+        "status":"not sold",
+        "type":"book"
+    },
+    {
+        "product_id":2,
         "product_name":"GTA V",
         "platform":"xbox",
         "price":1100,
-        "images":
-        {
-            "url1":"https://i.ebayimg.com/images/g/x8kAAOSwHrxkDTNr/s-l1600.jpg",
-            "url2":"https://i.ebayimg.com/images/g/SlAAAOSwVi5kDTNu/s-l1600.jpg",
-            "url3":"https://i.ebayimg.com/images/g/x8kAAOSwHrxkDTNr/s-l1600.jpg",
-            "url4":"https://i.ebayimg.com/images/g/SlAAAOSwVi5kDTNu/s-l1600.jpg"
-        }
+        "images":"https://i.ebayimg.com/images/g/x8kAAOSwHrxkDTNr/s-l1600.jpg",
+        "status":"not sold",
+        "type":"game"
     },
     {
-        "product_id":1003,
+        "product_id":3,
         "product_name":"god of war ragnarok",
         "platform":"playstation",
         "price":1400,
-        "images":
-        {
-            "url1":"https://i.ebayimg.com/images/g/wXcAAOSwSvBj4-Dz/s-l1600.jpg",
-            "url2":"https://i.ebayimg.com/images/g/n0YAAOSwGoJj4-D6/s-l1600.jpg",
-            "url3":"https://i.ebayimg.com/images/g/FAoAAOSwntFj4-DU/s-l1600.jpg",
-            "url4":"https://i.ebayimg.com/images/g/uRAAAOSwhnxj4-EB/s-l1600.jpg"
-        }
+        "images":"https://i.ebayimg.com/images/g/wXcAAOSwSvBj4-Dz/s-l1600.jpg",
+        "status":"not sold",
+        "type":"game"
     },
     {
-        "product_id":1004,
+        "product_id":4,
         "product_name":"Red Dead Redemption 2",
         "platform":"pc",
         "price":1345,
-        "images":
-        {
-            "url1":"https://i.ebayimg.com/images/g/094AAOSwQatj8Naz/s-l1600.jpg",
-            "url2":"https://i.ebayimg.com/images/g/PIYAAOSw~o5jgrJm/s-l1600.png",
-            "url3":"https://i.ebayimg.com/images/g/rQYAAOSwrkNi2LqJ/s-l1600.jpg",
-            "url4":"https://i.ebayimg.com/images/g/rQYAAOSwrkNi2LqJ/s-l1600.jpg"
-
-        }
+        "images":"https://i.ebayimg.com/images/g/094AAOSwQatj8Naz/s-l1600.jpg",
+        "status":"not sold",
+        "type":"game"
+    },
+    {
+        "product_id":5,
+        "product_name":"The Stranger",
+        "platform":"albert camus",
+        "price":350,
+        "images":"https://m.media-amazon.com/images/I/517eqjeVDzL._SX322_BO1,204,203,200_.jpg",
+        "status":"not sold",
+        "type":"book"
+    },
+    {
+        "product_id":6,
+        "product_name":"The Silent Patient",
+        "platform":"Alex Michaeldes",
+        "price":239,
+        "images":"https://m.media-amazon.com/images/I/71h6jXCBitL.jpg",
+        "status":"not sold",
+        "type":"book"
+    },
+    {
+        "product_id":7,
+        "product_name":"The Alchemist",
+        "platform":"Paulo Coelho",
+        "price":249,
+        "images":"https://m.media-amazon.com/images/I/71h6jXCBitL.jpg",
+        "status":"not sold",
+        "type":"book"
+    },
+    {
+        "product_id":8,
+        "product_name":"The Sailor who Fell from Grace with the Sea",
+        "platform":"Yukio Mishima",
+        "price":313,
+        "images":"https://m.media-amazon.com/images/I/51Y-nD3lbiS.jpg",
+        "status":"not sold",
+        "type":"book"
     }
+    
 ]

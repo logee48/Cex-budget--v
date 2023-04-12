@@ -177,11 +177,12 @@ function App({data}) {
         {Object.keys(dataSearch1).map((id,index)=>{
           return (
             <div className="product_border">
-              <img id="game_pic" src={dataSearch1[id].images.url1} alt="game_pic"></img>
+              <img id="game_pic" src={dataSearch1[id].images} alt="game_pic"></img>
             <div id="game_title">{dataSearch1[id].product_name}</div>
             <div id="game_price">price:{dataSearch1[id].price}</div>
             <img id="platform_pic" src={dataSearch1[id].platform === "pc" ? windows:dataSearch1[id].platform === "playstation"?ps_logo:xbox_logo} alt="platform_pic"></img>
-            <Link to="/buy" state={{"id":dataSearch1[id].product_id}}><button>buy</button></Link>
+            <Link to="/buy" state={{"id":dataSearch1[id].product_name}}><button>buy</button></Link>
+            {dataSearch1[id].status === "sold"? <div>item sold out</div>:<div>in stock</div>}
           </div>
           )
         })}
