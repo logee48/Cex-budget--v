@@ -156,7 +156,7 @@ function App({data}) {
                 <Link to="/sell"><img id="sell_h" src={sell} alt="sell"></img></Link>
       </div>
       <div id="search_bar">
-      <input value={filter} placeholder="seach...." onChange={searchText.bind(this)}></input>
+      <input id="search_input" value={filter} placeholder="seach...." onChange={searchText.bind(this)}></input>
       <img id="search_logo"src={logo}></img>
       </div>
       
