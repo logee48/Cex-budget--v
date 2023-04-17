@@ -148,6 +148,8 @@ function App({data}) {
   const sample = useLocation().state;
   return (
     <>
+
+      <div>{localStorage.getItem('email')}</div>
       <div>{sample}</div>
       {/* header line section */}
       <div class='header'>
