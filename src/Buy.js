@@ -52,7 +52,6 @@ function Buy()
     // console.log(user_email.length);
     const buy_item = () =>{
         const timestamp = Date.now();
-        // update_counter()
         set(ref(db, "users/"+var_user_email+"/item-brought/"+timestamp),{
             product_id: dataSearch[0].product_id,
             product_name: dataSearch[0].product_name,
