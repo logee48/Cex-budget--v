@@ -14,11 +14,12 @@ body
 }
 #logo_h
 {
-  padding: 30px;
+  /* padding: 10px; */
   position: absolute;
-  left: 0px;
+  left: 20px;
+  /* background-color: red; */
 }
-#logo_h, #account_h, #cart_h, #sell_h
+#logo_h, #account_h, #cart_h, #sell_h,#account_h
 {
   width: 50px;
   align-self: center;
@@ -116,4 +117,12 @@ body
   {
     grid-template-columns: auto auto;
   }
+}
+#sigin-section
+{
+  position: relative;
+  top: 150px;
+  display: flex;
+  justify-content: center;
+  /* background-color: red; */
 }

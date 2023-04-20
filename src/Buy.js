@@ -11,18 +11,18 @@ import { db } from './config';
 import { set,ref,onValue } from 'firebase/database';
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from "react";
+import account from './images/account_logo.png'
 
 function Buy()
 {
     const [testdata, settestdata] = useState([]);
+    const [counter_data, setcounter_data] = useState({});
     const { id } = useLocation().state;
-    console.log(id);
     let dataSearch = testdata.filter(item =>{
         return Object.keys(item).some(key=>
           item[key].toString().toLowerCase().includes(id.toLowerCase())
           )
       });
-      console.log(testdata);
 
 
     useEffect(()=>{
@@ -31,24 +31,54 @@ function Buy()
         if(data!=null){
         settestdata(data)}
     })
+    onValue(ref(db,'/counter'),(snapshot)=>{
+        const data = snapshot.val();
+        if(data!=null){
+        setcounter_data(data)}
+      })
     },[]);
-
+    console.log(counter_data);
+    // const update_counter = () => {
+    //   set(ref(db, 'counter/'),{
+    //       unique_id:counter_data.unique_id,
+    //       counter:counter_data.item_brought_count,
+    //       item_brought_count:counter_data.item_brought_count+1,
+    //       item_sold_count:counter_data.item_sold_count
+    //   })
+    // }
+    let user_email = JSON.parse(localStorage.getItem("user-data")).email;
+    let var_user_email = user_email.slice(0, user_email.length-10)
+    // console.log(var_user_email);
+    // console.log(user_email.length);
     const buy_item = () =>{
+        const timestamp = Date.now();
+        // update_counter()
+        set(ref(db, "users/"+var_user_email+"/item-brought/"+timestamp),{
+            product_id: dataSearch[0].product_id,
+            product_name: dataSearch[0].product_name,
+            platform: dataSearch[0].platform,
+            price: dataSearch[0].price,
+            images: dataSearch[0].images,
+            status: "sold",
+            type: dataSearch[0].type
+        })
         set(ref(db, 'products/'+dataSearch[0].product_id),{
             product_id: dataSearch[0].product_id,
             product_name: dataSearch[0].product_name,
             platform: dataSearch[0].platform,
-            price:dataSearch[0].price,
-            images:dataSearch[0].images,
-            status:"sold",
-            type:dataSearch[0].type
+            price: dataSearch[0].price,
+            images: dataSearch[0].images,
+            status: "sold",
+            type: dataSearch[0].type
         })
+        
     }
     return (
         <>
 
             <div className='header'>
                     <Link to="/"><img id="logo_h" src={logo} alt="logo"></img></Link>
+                    <Link to="/test"><img id="account_h" src={account}></img></Link>
                     {/* <div class="header_title">Cex 2.0</div> */}
                     <Link to="/sell"><img id="sell_h" src={sell} alt="sell"></img></Link>
                 

@@ -3,6 +3,7 @@ import { db } from './config';
 import { set,ref,onValue } from 'firebase/database';
 // import { uid } from 'uid';
 import './App.css';
+import account from './images/account_logo.png'
 import logo from './images/logo.png';
 import sell from './images/selling.png';
 import product_data from './sample.json';
@@ -149,12 +150,13 @@ function App({data}) {
   return (
     <>
 
-      <div>{localStorage.getItem('email')}</div>
+      <div>{localStorage.getItem('user-data')}</div>
+      <Link to="/test"><button>login</button></Link>
       <div>{sample}</div>
       {/* header line section */}
       <div class='header'>
                 <Link to="/"><img id="logo_h" src={logo} alt="logo"></img></Link>
-                {/* <div class="header_title">Cex 2.0</div> */}
+                <Link to="/test"><img id="account_h" src={account}></img></Link>
                 <Link to="/sell"><img id="sell_h" src={sell} alt="sell"></img></Link>
       </div>
       <div id="search_bar">

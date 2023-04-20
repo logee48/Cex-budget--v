@@ -2,7 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import App from './App';
 import Buy from "./Buy";
 import Sell from "./Sell";
-import Sample from "./Sample";
+import Sample from "./profile";
 
 function Home()
 {

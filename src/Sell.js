@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { db } from './config';
 import { set,ref, onValue } from 'firebase/database';
 import { useState, useEffect } from 'react';
+import account from './images/account_logo.png'
 
 
 function Sell()
@@ -57,13 +58,27 @@ function Sell()
       const update_counter = () => {
         set(ref(db, 'counter/'),{
             unique_id:counter_data.unique_id+1,
-            counter:counter_data.counter+1
+            counter:counter_data.counter,
+            item_brought_count:counter_data.item_brought_count,
+            item_sold_count:counter_data.item_sold_count+1
         })
       }
-
+    let user_email = JSON.parse(localStorage.getItem("user-data")).email;
+    let var_user_email = user_email.slice(0, user_email.length-10)
+    
+    
     const write_data = () =>{
         const timestamp = Date.now();
         set(ref(db, 'products/'+counter_data.counter),{
+          product_id: counter_data.counter,
+          product_name: product_name,
+          platform: platform_val,
+          price: product_price_val,
+          images: images_val,
+          status: "not sold",
+          type: type_val
+        })
+        set(ref(db, "users/"+var_user_email+"/item-sold/"+timestamp),{
           product_id: counter_data.counter,
           product_name: product_name,
           platform: platform_val,
@@ -79,6 +94,7 @@ function Sell()
         <>
             <div className='header'>
                     <Link to="/"><img id="logo_h" src={logo} alt="logo"></img></Link>
+                    <Link to="/test"><img id="account_h" src={account}></img></Link>
                     {/* <div class="header_title">Cex 2.0</div> */}
                     <Link to="/sell"><img id="sell_h" src={sell} alt="sell"></img></Link>
                     

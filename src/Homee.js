@@ -5,11 +5,16 @@ function Homee(){
         localStorage.clear()
         window.location.reload()
     }
+    const userdata = JSON.parse(localStorage.getItem("user-data"));
+    console.log(userdata);
     return (
         <div>
             <h1>Home Page</h1>
-            <div>{localStorage.getItem('email')}</div>
-            <button onClick={logout}>Logout</button>
+            <div>{userdata.name}</div>
+            <img src={userdata.img}></img>
+            <div>{userdata.email}</div>
+            {/* <img src="https://lh3.googleusercontent.com/a/AGNmyxZvXsqQryc0f_CTZsQ0pVzNf6JUtVHQ0pLcE1U=s96-c"></img> */}
+            {/* <button onClick={logout}>Logout</button> */}
         </div>
     );
 }
