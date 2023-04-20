@@ -60,11 +60,11 @@ function App({data}) {
   }
 
   // searching function
-  let dataSearch = product_data.filter(item =>{
-    return Object.keys(item).some(key=>
-      item[key].toString().toLowerCase().includes(filter.toString().toLowerCase())
-      )
-  });
+  // let dataSearch = product_data.filter(item =>{
+  //   return Object.keys(item).some(key=>
+  //     item[key].toString().toLowerCase().includes(filter.toString().toLowerCase())
+  //     )
+  // });
 
   let dataSearch1 = testdata.filter(item =>{
     return Object.keys(item).some(key=>
@@ -147,6 +147,29 @@ function App({data}) {
 
   // console.log(testdata)
   const sample = useLocation().state;
+  let user_email = JSON.parse(localStorage.getItem("user-data")).email;
+  let var_user_email = user_email.slice(0, user_email.length-10)
+
+
+  function cart_function(arg)
+  {
+    let cart_item = testdata.filter(item =>{
+      return Object.keys(item).some(key=>
+        item[key].toString().toLowerCase().includes(arg.toLowerCase())
+        )
+    });
+    const timestamp = Date.now();
+        set(ref(db, "users/"+var_user_email+"/cart/"+timestamp),{
+          product_id: cart_item.product_id,
+          product_name: cart_item.product_name,
+          platform: cart_item.platform,
+          price: cart_item.price,
+          images: cart_item.images,
+          status: cart_item.status,
+          type: cart_item.type
+        })
+
+  }
   return (
     <>
 
@@ -187,6 +210,24 @@ function App({data}) {
             <img id="platform_pic" src={dataSearch1[id].platform === "pc" ? windows:dataSearch1[id].platform === "playstation"?ps_logo:xbox_logo} alt="platform_pic"></img>
             <Link to="/buy" state={{"id":dataSearch1[id].product_name}}><button>buy</button></Link>
             {dataSearch1[id].status === "sold"? <div>item sold out</div>:<div>in stock</div>}
+            <button onClick={()=>{
+              let cart_item = testdata.filter(item =>{
+                return Object.keys(item).some(key=>
+                  item[key].toString().toLowerCase().includes(dataSearch1[id].product_name.toLowerCase())
+                  )
+              });
+              console.log(cart_item);
+              const timestamp = Date.now();
+                  set(ref(db, "users/"+var_user_email+"/cart/"+timestamp),{
+                    product_id: cart_item[0].product_id,
+                    product_name: cart_item[0].product_name,
+                    platform: cart_item[0].platform,
+                    price: cart_item[0].price,
+                    images: cart_item[0].images,
+                    status: cart_item[0].status,
+                    type: cart_item[0].type
+                  })
+            }}>add to cart</button>
           </div>
           )
         })}
