@@ -5,6 +5,7 @@ import Homee from "./Homee";
 import logo from './images/logo.png';
 import sell from './images/selling.png';
 import { Link, Route, Routes } from 'react-router-dom';
+import './App.css'
 
 function Profile(){
     const [value,setValue] = useState('')

@@ -126,3 +126,27 @@ body
   justify-content: center;
   /* background-color: red; */
 }
+#profile-text
+{
+  position: relative;
+  top: 200px;
+  font-size: 40px;
+  /* row-gap: 500px; */
+}
+#profile-header
+{
+  display: grid;
+  grid-template-columns: auto auto;
+}
+#profile-name
+{
+  /* font-size: 50px; */
+  padding-bottom: 50px;
+}
+
+#item-display
+{
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
