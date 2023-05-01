@@ -82,18 +82,20 @@ function Buy()
                     <Link to="/sell"><img id="sell_h" src={sell} alt="sell"></img></Link>
                 
             </div>
-            <div>profile page</div>
-            <div>{dataSearch.product_data}</div>
+            {/* <div>{dataSearch.product_data}</div> */}
             {dataSearch.map((prod)=>(
-                <div className="product_border">
-                    <img id="game_pic" src={prod.images} alt="game_pic"></img>
-              <div id="game_title">{prod.product_name}</div>
-              <div id="game_price">price:{prod.price}</div>
-              <img id="platform_pic" src={prod.platform === "pc" ? windows:prod.platform === "playstation"?ps_logo:xbox_logo} alt="platform_pic"></img>
+                <div style={{borderStyle:"solid",width:"60vw",display:"grid",gridTemplateColumns:"auto auto",marginTop:"100px",marginLeft:"20%",borderRadius:"40px"}}>
+                    <div><img style={{width:"300px",padding:"20px"}} src={prod.images} alt="game_pic"></img></div>
+                    <div style={{padding:"20px"}}>
+                        <div style={{fontSize:"50px"}}>{prod.product_name}</div>
+                        <div style={{fontSize:"40px",marginTop:"20px"}}>price:{prod.price}</div>
+                        <div><img style={{width:"50px",marginTop:"20px"}} src={prod.platform === "pc" ? windows:prod.platform === "playstation"?ps_logo:xbox_logo} alt="platform_pic"></img></div>
+                        <button onClick={buy_item} style={{marginTop:"60px",color:"rgb(95, 237, 76)",padding:"20px",width:"200px",borderStyle:"solid black",backgroundColor:"white"}}>buy now</button>
+                    </div>
                 </div>
             ))}
 
-            <button onClick={buy_item}>confirm buy</button>
+            
         </>
     )
 }

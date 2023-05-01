@@ -173,9 +173,9 @@ function App({data}) {
   return (
     <>
 
-      <div>{localStorage.getItem('user-data')}</div>
+      {/* <div>{localStorage.getItem('user-data')}</div>
       <Link to="/test"><button>login</button></Link>
-      <div>{sample}</div>
+      <div>{sample}</div> */}
       {/* header line section */}
       <div class='header'>
                 <Link to="/"><img id="logo_h" src={logo} alt="logo"></img></Link>

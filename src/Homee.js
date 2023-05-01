@@ -5,6 +5,7 @@ import { set,ref,onValue } from 'firebase/database';
 import windows from './images/windows.png';
 import ps_logo from './images/ps_logo.png';
 import xbox_logo from './images/xbox_logo.png';
+import profilee from './images/account_logo.png';
 
 function Homee(){
     const [broughtitems, setbroughtitems] = useState([]);
@@ -32,7 +33,8 @@ function Homee(){
     return (
         <div>
             <div id="profile-header">
-                <div><img src={userdata.img} style={{width:"300px",borderRadius:"50%", marginTop:"100px",marginLeft:"200px"}}></img></div>
+                <div><img src={userdata.img} style={{width:"300px",borderRadius:"50%", marginTop:"10px",marginLeft:"100px"}}></img></div>
+                {/* <div><img src={userdata.img?userdata.img:profilee} style={{width:"300px",borderRadius:"50%", marginTop:"100px",marginLeft:"200px"}}></img></div> */}
                 <div id="profile-text">
                     <div id="profile-name">UserName: {userdata.name}</div>
                     <div id="profile-mail">Email: {userdata.email}</div>
@@ -43,14 +45,14 @@ function Homee(){
                     <div style={{textAlign:"center",marginTop:"10vh"}}>items Bought</div>
                     {Object.keys(broughtitems).map((id,index)=>{
           return (
-            <div className="product_border">
-              <img id="game_pic" src={broughtitems[id].images} alt="game_pic"></img>
-            <div id="game_title">{broughtitems[id].product_name}</div>
-            <div id="game_price">price:{broughtitems[id].price}</div>
-            <img id="platform_pic" src={broughtitems[id].platform === "pc" ? windows:broughtitems[id].platform === "playstation"?ps_logo:xbox_logo} alt="platform_pic"></img>
-            {broughtitems[id].status === "sold"? <div>item sold out</div>:<div>in stock</div>}
-            
-          </div>
+            <div className="product_border" style={{position:"relative", left:"25%", display:"grid",gridTemplateColumns:"auto auto",padding:"10px"}}>
+             <div><img style={{width:'150px'}} src={broughtitems[id].images} alt="game_pic"></img></div>
+              <div>
+                <div >{broughtitems[id].product_name}</div>
+                <div>price:{broughtitems[id].price}</div>
+                <img width={"50px"} src={broughtitems[id].platform === "pc" ? windows:broughtitems[id].platform === "playstation"?ps_logo:xbox_logo} alt="platform_pic"></img>
+              </div>
+            </div>
           )
         })}
                 </div>
@@ -58,14 +60,14 @@ function Homee(){
                     <div style={{textAlign:"center",marginTop:"10vh"}}>items Sold</div>
                     {Object.keys(solditems).map((id,index)=>{
           return (
-            <div className="product_border">
-              <img id="game_pic" src={solditems[id].images} alt="game_pic"></img>
-            <div id="game_title">{solditems[id].product_name}</div>
-            <div id="game_price">price:{solditems[id].price}</div>
-            <img id="platform_pic" src={solditems[id].platform === "pc" ? windows:solditems[id].platform === "playstation"?ps_logo:xbox_logo} alt="platform_pic"></img>
-            {solditems[id].status === "sold"? <div>item sold out</div>:<div>in stock</div>}
-            
-          </div>
+            <div className="product_border" style={{position:"relative", left:"25%", display:"grid",gridTemplateColumns:"auto auto",padding:"10px"}}>
+              <div><img style={{width:'150px'}} src={solditems[id].images} alt="game_pic"></img></div>
+              <div>
+                <div >{solditems[id].product_name}</div>
+                <div>price:{solditems[id].price}</div>
+                <img width={"50px"} src={solditems[id].platform === "pc" ? windows:solditems[id].platform === "playstation"?ps_logo:xbox_logo} alt="platform_pic"></img>
+              </div>
+            </div>
           )
         })}
                 </div>

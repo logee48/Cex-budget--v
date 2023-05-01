@@ -13,6 +13,7 @@ function Home()
                 <Route path="/sell" element={<Sell/>}/>
                 <Route path="/buy" element={<Buy />}/>
                 <Route path="/test" element={<Sample />}/>
+                <Route path="/cart" element={<cart />}/>
             </Routes>
         </>
     )
