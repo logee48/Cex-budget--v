@@ -1,9 +1,9 @@
-
 import { useLocation } from "react-router-dom";
 import product_data from './sample.json';
 import windows from './images/windows.png';
 import ps_logo from './images/ps_logo.png';
 import xbox_logo from './images/xbox_logo.png';
+import book_logo from './images/book.png';
 import logo from './images/logo.png';
 import sell from './images/selling.png';
 import './App.css';
@@ -11,7 +11,8 @@ import { db } from './config';
 import { set,ref,onValue } from 'firebase/database';
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from "react";
-import account from './images/account_logo.png'
+import account from './images/account_logo.png';
+import cart from './images/cart_logo.png'
 
 function Buy()
 {
@@ -77,6 +78,7 @@ function Buy()
 
             <div className='header'>
                     <Link to="/"><img id="logo_h" src={logo} alt="logo"></img></Link>
+                    <Link to="/cart"><img id="sell_h" src={cart} alt="sell"></img></Link>
                     <Link to="/test"><img id="account_h" src={account}></img></Link>
                     {/* <div class="header_title">Cex 2.0</div> */}
                     <Link to="/sell"><img id="sell_h" src={sell} alt="sell"></img></Link>
@@ -89,8 +91,8 @@ function Buy()
                     <div style={{padding:"20px"}}>
                         <div style={{fontSize:"50px"}}>{prod.product_name}</div>
                         <div style={{fontSize:"40px",marginTop:"20px"}}>price:{prod.price}</div>
-                        <div><img style={{width:"50px",marginTop:"20px"}} src={prod.platform === "pc" ? windows:prod.platform === "playstation"?ps_logo:xbox_logo} alt="platform_pic"></img></div>
-                        <button onClick={buy_item} style={{marginTop:"60px",color:"rgb(95, 237, 76)",padding:"20px",width:"200px",borderStyle:"solid black",backgroundColor:"white"}}>buy now</button>
+                        <div><img style={{width:"50px",marginTop:"20px"}} src={prod.platform === "pc" ? windows:prod.platform === "playstation"?ps_logo:prod.platform === "xbox"?xbox_logo:book_logo} alt="platform_pic"></img></div>
+                        <Link to="/"><button onClick={buy_item} style={{marginTop:"60px",color:"rgb(95, 237, 76)",padding:"20px",width:"200px",borderStyle:"solid black",backgroundColor:"white"}}>buy now</button></Link>
                     </div>
                 </div>
             ))}

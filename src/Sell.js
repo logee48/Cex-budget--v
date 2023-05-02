@@ -1,5 +1,6 @@
 import logo from './images/logo.png';
 import sell from './images/selling.png';
+import cart from './images/cart_logo.png'
 import './App.css';
 import { Link } from 'react-router-dom';
 import { db } from './config';
@@ -58,7 +59,7 @@ function Sell()
       const update_counter = () => {
         set(ref(db, 'counter/'),{
             unique_id:counter_data.unique_id+1,
-            counter:counter_data.counter,
+            counter:counter_data.counter+1,
             item_brought_count:counter_data.item_brought_count,
             item_sold_count:counter_data.item_sold_count+1
         })
@@ -94,25 +95,27 @@ function Sell()
         <>
             <div className='header'>
                     <Link to="/"><img id="logo_h" src={logo} alt="logo"></img></Link>
+                    <Link to="/cart"><img id="sell_h" src={cart} alt="sell"></img></Link>
                     <Link to="/test"><img id="account_h" src={account}></img></Link>
-                    {/* <div class="header_title">Cex 2.0</div> */}
-                    <Link to="/sell"><img id="sell_h" src={sell} alt="sell"></img></Link>
-                    
+                    {/* <div class="header_title">Cex 2.0</div> */}  
             </div>
-            <div>image_url</div>
-            <input value={images_val} onChange={handlechange1}></input>
-            <div>platform</div>
-            <input value={platform_val} onChange={handlechange2}></input>
-            <div>price</div>
-            <input value={product_price_val} onChange={handlechange3}></input>
-            <div>product name</div>
-            <input value={product_name} onChange={handlechange4}></input>
+            <div style={{textAlign:"center", margin:"50px", fontSize:"50px", color:"rgb(237, 195, 81)"}}>CEX 2.0 sell ur old stuff and make money for new stuff</div>
+            <div style={{display:"grid", justifyContent:"center"}}>
+              <div style={{fontSize:"30px",color:"rgb(152, 190, 250)"}}>image_url : </div>
+              <input value={images_val} onChange={handlechange1} style={{width:"500px",padding:"10px"}}></input>
+              <div style={{fontSize:"30px",color:"rgb(152, 190, 250)"}}>platform</div>
+              <input value={platform_val} onChange={handlechange2} style={{width:"500px",padding:"10px"}}></input>
+              <div style={{fontSize:"30px",color:"rgb(152, 190, 250)"}}>price</div>
+              <input value={product_price_val} onChange={handlechange3} style={{width:"500px",padding:"10px"}}></input>
+              <div style={{fontSize:"30px",color:"rgb(152, 190, 250)"}}>product name</div>
+              <input value={product_name} onChange={handlechange4} style={{width:"500px",padding:"10px"}}></input>
 
-            {/* <input value={status_val} onChange={handlechange5}></input> */}
-            <div>product_type</div>
-            <input value={type_val} onChange={handlechange6}></input>
-            <div></div>
-            <button onClick={write_data}>sell</button>
+              {/* <input value={status_val} onChange={handlechange5}></input> */}
+              <div style={{fontSize:"30px",color:"rgb(152, 190, 250)"}}>product_type</div>
+              <input value={type_val} onChange={handlechange6} style={{width:"500px",padding:"10px"}}></input>
+              <div></div>
+              <button onClick={write_data} style={{padding:"10px",marginTop:"20px",backgroundColor:"rgb(105, 245, 110)"}}>sell</button>
+            </div>
             
         </>
     )

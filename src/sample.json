@@ -11,7 +11,7 @@
     {
         "product_id":1,
         "product_name":"The Sound of Waves",
-        "platform":"Yukio Mishima",
+        "platform":"book",
         "price":320,
         "images":"https://m.media-amazon.com/images/I/51JoSGbJvdL.jpg",
         "status":"not sold",
@@ -47,7 +47,7 @@
     {
         "product_id":5,
         "product_name":"The Stranger",
-        "platform":"albert camus",
+        "platform":"book",
         "price":350,
         "images":"https://m.media-amazon.com/images/I/517eqjeVDzL._SX322_BO1,204,203,200_.jpg",
         "status":"not sold",
@@ -56,7 +56,7 @@
     {
         "product_id":6,
         "product_name":"The Silent Patient",
-        "platform":"Alex Michaeldes",
+        "platform":"book",
         "price":239,
         "images":"https://m.media-amazon.com/images/I/71h6jXCBitL.jpg",
         "status":"not sold",
@@ -65,7 +65,7 @@
     {
         "product_id":7,
         "product_name":"The Alchemist",
-        "platform":"Paulo Coelho",
+        "platform":"book",
         "price":249,
         "images":"https://m.media-amazon.com/images/I/71h6jXCBitL.jpg",
         "status":"not sold",
@@ -74,7 +74,7 @@
     {
         "product_id":8,
         "product_name":"The Sailor who Fell from Grace with the Sea",
-        "platform":"Yukio Mishima",
+        "platform":"book",
         "price":313,
         "images":"https://m.media-amazon.com/images/I/51Y-nD3lbiS.jpg",
         "status":"not sold",

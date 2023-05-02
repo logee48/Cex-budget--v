@@ -4,6 +4,7 @@ import {signInWithPopup} from "firebase/auth";
 import Homee from "./Homee";
 import logo from './images/logo.png';
 import sell from './images/selling.png';
+import cart from './images/cart_logo.png'
 import { Link, Route, Routes } from 'react-router-dom';
 import './App.css'
 
@@ -33,16 +34,16 @@ return (
     <div className="acc-section">
         <div class='header'>
                 <Link to="/"><img id="logo_h" src={logo} alt="logo"></img></Link>
-                {/* <div class="header_title">Cex 2.0</div> */}
-                
+                {value?<Link to="/cart"><img id="sell_h" src={cart} alt="sell"></img></Link>:<></>}
                 {value?<button onClick={signout}>sigin-out</button>:<></>}
                 <Link to="/sell"><img id="sell_h" src={sell} alt="sell"></img></Link>
         </div>
         <div>
-            {/* <div>sdjn</div> */}
-            {/* <div>sign in with your account</div> */}
             <div>{value?<Homee/>:
-            <div id="sigin-section"><button  onClick={handleClick}>Signin With Google</button></div>
+            <div id="sigin-section" style={{display:"grid",gridTemplateColumns:"auto"}}>
+                <div style={{fontSize:"80px",color:"rgb(250, 112, 102)"}}>Welcome to CEX 2.0</div>
+                <button  onClick={handleClick} style={{width:"400px",position:"relative",left:"20%",height:"40px",border:"none",backgroundColor:"rgb(150, 189, 242)"}}>Signin With Google</button>
+            </div>
             }</div>
         </div>
     </div>

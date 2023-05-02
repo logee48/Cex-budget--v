@@ -6,10 +6,11 @@ import './App.css';
 import account from './images/account_logo.png'
 import logo from './images/logo.png';
 import sell from './images/selling.png';
-import product_data from './sample.json';
+import cart from './images/cart_logo.png';
 import windows from './images/windows.png';
 import ps_logo from './images/ps_logo.png';
 import xbox_logo from './images/xbox_logo.png';
+import book_logo from './images/book.png';
 import { Link, Route, Routes } from 'react-router-dom';
 import { useLocation } from "react-router-dom";
 
@@ -179,6 +180,7 @@ function App({data}) {
       {/* header line section */}
       <div class='header'>
                 <Link to="/"><img id="logo_h" src={logo} alt="logo"></img></Link>
+                <Link to="/cart"><img id="sell_h" src={cart} alt="sell"></img></Link>
                 <Link to="/test"><img id="account_h" src={account}></img></Link>
                 <Link to="/sell"><img id="sell_h" src={sell} alt="sell"></img></Link>
       </div>
@@ -206,7 +208,7 @@ function App({data}) {
             <div className="product_border">
               {dataSearch1[id].status === "sold"? <div style={{width:"100px",backgroundColor:"red",textAlign:"center",transform: "rotate(-45deg)",position:"relative",left:"-25px",top:"10px",color:"white"}}>sold out</div>:<div>"</div>}
               <img id="game_pic" src={dataSearch1[id].images} alt="game_pic"></img>
-              <img id="platform_pic" src={dataSearch1[id].platform === "pc" ? windows:dataSearch1[id].platform === "playstation"?ps_logo:xbox_logo} alt="platform_pic"></img>
+              <img id="platform_pic" src={dataSearch1[id].platform === "pc" ? windows:dataSearch1[id].platform === "playstation"?ps_logo:dataSearch1[id].platform === "xbox"?xbox_logo:book_logo} alt="platform_pic"></img>
             <div id="game_title">{dataSearch1[id].product_name}</div>
             <div id="game_price">price:{dataSearch1[id].price}</div>
             <Link to="/buy" state={{"id":dataSearch1[id].product_name}}><button style={{padding:"10px",width:"50%",borderRadius:"30px"}}>buy</button></Link>

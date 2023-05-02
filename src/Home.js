@@ -3,6 +3,8 @@ import App from './App';
 import Buy from "./Buy";
 import Sell from "./Sell";
 import Sample from "./profile";
+import Cart from "./Cart";
+
 
 function Home()
 {
@@ -13,7 +15,7 @@ function Home()
                 <Route path="/sell" element={<Sell/>}/>
                 <Route path="/buy" element={<Buy />}/>
                 <Route path="/test" element={<Sample />}/>
-                <Route path="/cart" element={<cart />}/>
+                <Route path="/cart" element={<Cart />}/>
             </Routes>
         </>
     )

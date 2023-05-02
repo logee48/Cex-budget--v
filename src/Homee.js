@@ -5,6 +5,7 @@ import { set,ref,onValue } from 'firebase/database';
 import windows from './images/windows.png';
 import ps_logo from './images/ps_logo.png';
 import xbox_logo from './images/xbox_logo.png';
+import book_logo from './images/book.png'
 import profilee from './images/account_logo.png';
 
 function Homee(){
@@ -29,7 +30,7 @@ function Homee(){
           })
       },[]);
       let user_email = JSON.parse(localStorage.getItem("user-data")).email;
-  let var_user_email = user_email.slice(0, user_email.length-10)
+      let var_user_email = user_email.slice(0, user_email.length-10)
     return (
         <div>
             <div id="profile-header">
@@ -50,7 +51,7 @@ function Homee(){
               <div>
                 <div >{broughtitems[id].product_name}</div>
                 <div>price:{broughtitems[id].price}</div>
-                <img width={"50px"} src={broughtitems[id].platform === "pc" ? windows:broughtitems[id].platform === "playstation"?ps_logo:xbox_logo} alt="platform_pic"></img>
+                <img width={"50px"} src={broughtitems[id].platform === "pc" ? windows:broughtitems[id].platform === "playstation"?ps_logo:broughtitems[id].platform === "xbox"?xbox_logo:book_logo} alt="platform_pic"></img>
               </div>
             </div>
           )
