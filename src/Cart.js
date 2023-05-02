@@ -31,8 +31,8 @@ function Cart()
     return(
         <>
             <div className='header'>
-                    <Link to="/"><img id="logo_h" src={logo} alt="logo"></img></Link>
-                    <Link to="/test"><img id="account_h" src={account}></img></Link>
+                    <Link to="/home"><img id="logo_h" src={logo} alt="logo"></img></Link>
+                    <Link to="/"><img id="account_h" src={account}></img></Link>
                     <Link to="/sell"><img id="sell_h" src={sell} alt="sell"></img></Link>
             </div>
             {Object.keys(cartdata).map((id,index)=>{

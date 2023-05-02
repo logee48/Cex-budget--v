@@ -11,10 +11,10 @@ function Home()
     return (
         <>
             <Routes>
-                <Route path="/" element={<App/>}/>
+                <Route path="/" element={<Sample/>}/>
                 <Route path="/sell" element={<Sell/>}/>
                 <Route path="/buy" element={<Buy />}/>
-                <Route path="/test" element={<Sample />}/>
+                <Route path="/home" element={<App />}/>
                 <Route path="/cart" element={<Cart />}/>
             </Routes>
         </>
