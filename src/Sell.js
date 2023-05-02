@@ -94,9 +94,9 @@ function Sell()
     return (
         <>
             <div className='header'>
-                    <Link to="/"><img id="logo_h" src={logo} alt="logo"></img></Link>
+                    <Link to="/home"><img id="logo_h" src={logo} alt="logo"></img></Link>
                     <Link to="/cart"><img id="sell_h" src={cart} alt="sell"></img></Link>
-                    <Link to="/test"><img id="account_h" src={account}></img></Link>
+                    <Link to="/"><img id="account_h" src={account}></img></Link>
                     {/* <div class="header_title">Cex 2.0</div> */}  
             </div>
             <div style={{textAlign:"center", margin:"50px", fontSize:"50px", color:"rgb(237, 195, 81)"}}>CEX 2.0 sell ur old stuff and make money for new stuff</div>

@@ -33,7 +33,7 @@ function Profile(){
 return (
     <div className="acc-section">
         <div class='header'>
-                <Link to="/"><img id="logo_h" src={logo} alt="logo"></img></Link>
+                <Link to="/home"><img id="logo_h" src={logo} alt="logo"></img></Link>
                 {value?<Link to="/cart"><img id="sell_h" src={cart} alt="sell"></img></Link>:<></>}
                 {value?<button onClick={signout}>sigin-out</button>:<></>}
                 <Link to="/sell"><img id="sell_h" src={sell} alt="sell"></img></Link>
